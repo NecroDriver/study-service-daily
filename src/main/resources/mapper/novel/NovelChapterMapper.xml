@@ -1,0 +1,276 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xin.daily.dao.novel.NovelChapterMapper">
+    <resultMap id="BaseResultMap" type="com.xin.daily.entity.novel.NovelChapter">
+        <!--@mbg.generated-->
+        <!--@Table study.novel_chapter-->
+        <id column="id" jdbcType="INTEGER" property="id"/>
+        <result column="novel_code" jdbcType="VARCHAR" property="novelCode"/>
+        <result column="chapter_code" jdbcType="VARCHAR" property="chapterCode"/>
+        <result column="chapter_name" jdbcType="VARCHAR" property="chapterName"/>
+        <result column="url" jdbcType="VARCHAR" property="url"/>
+        <result column="display_order" jdbcType="INTEGER" property="displayOrder"/>
+        <result column="flag_delete" jdbcType="TINYINT" property="flagDelete"/>
+        <result column="create_time" jdbcType="TIMESTAMP" property="createTime"/>
+        <result column="creator" jdbcType="VARCHAR" property="creator"/>
+        <result column="creator_ip" jdbcType="VARCHAR" property="creatorIp"/>
+        <result column="modify_time" jdbcType="TIMESTAMP" property="modifyTime"/>
+        <result column="modifier" jdbcType="VARCHAR" property="modifier"/>
+        <result column="modifier_ip" jdbcType="VARCHAR" property="modifierIp"/>
+    </resultMap>
+    <resultMap extends="BaseResultMap" id="ResultMapWithBLOBs" type="com.xin.daily.entity.novel.NovelChapter">
+        <!--@mbg.generated-->
+        <!--@Table study.novel_chapter-->
+        <result column="content" jdbcType="LONGVARCHAR" property="content"/>
+    </resultMap>
+    <sql id="Base_Column_List">
+        <!--@mbg.generated-->
+        id, novel_code, chapter_code, chapter_name, url, display_order
+    </sql>
+    <sql id="Blob_Column_List">
+        <!--@mbg.generated-->
+        content
+    </sql>
+    <select id="selectByChapterCode" resultType="com.xin.daily.vo.NovelChapterVo">
+        select
+        <include refid="Base_Column_List"/>
+        ,
+        <include refid="Blob_Column_List"/>
+        from study.novel_chapter
+        where chapter_code = #{chapterCode}
+    </select>
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+        <!--@mbg.generated-->
+        delete from study.novel_chapter
+        where id = #{id,jdbcType=INTEGER}
+    </delete>
+    <insert id="insert" keyColumn="id" keyProperty="id" parameterType="com.xin.daily.entity.novel.NovelChapter"
+            useGeneratedKeys="true">
+        <!--@mbg.generated-->
+        insert into study.novel_chapter (novel_code, chapter_code, chapter_name, url,
+        display_order, flag_delete, create_time,
+        creator, creator_ip, modify_time,
+        modifier, modifier_ip, content
+        )
+        values (#{novelCode,jdbcType=VARCHAR}, #{chapterCode,jdbcType=VARCHAR}, #{chapterName,jdbcType=VARCHAR},
+        #{url,jdbcType=VARCHAR}, #{displayOrder,jdbcType=INTEGER}, #{flagDelete,jdbcType=TINYINT},
+        #{createTime,jdbcType=TIMESTAMP}, #{creator,jdbcType=VARCHAR}, #{creatorIp,jdbcType=VARCHAR},
+        #{modifyTime,jdbcType=TIMESTAMP},
+        #{modifier,jdbcType=VARCHAR}, #{modifierIp,jdbcType=VARCHAR}, #{content,jdbcType=LONGVARCHAR}
+        )
+    </insert>
+    <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="com.xin.daily.entity.novel.NovelChapter"
+            useGeneratedKeys="true">
+        <!--@mbg.generated-->
+        insert into study.novel_chapter
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="novelCode != null">
+                novel_code,
+            </if>
+            <if test="chapterCode != null">
+                chapter_Code,
+            </if>
+            <if test="chapterName != null">
+                chapter_name,
+            </if>
+            <if test="url != null">
+                url,
+            </if>
+            <if test="displayOrder != null">
+                display_order,
+            </if>
+            <if test="flagDelete != null">
+                flag_delete,
+            </if>
+            <if test="createTime != null">
+                create_time,
+            </if>
+            <if test="creator != null">
+                creator,
+            </if>
+            <if test="creatorIp != null">
+                creator_ip,
+            </if>
+            <if test="modifyTime != null">
+                modify_time,
+            </if>
+            <if test="modifier != null">
+                modifier,
+            </if>
+            <if test="modifierIp != null">
+                modifier_ip,
+            </if>
+            <if test="content != null">
+                content,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="novelCode != null">
+                #{novelCode,jdbcType=VARCHAR},
+            </if>
+            <if test="chapterCode != null">
+                #{chapterCode,jdbcType=VARCHAR},
+            </if>
+            <if test="chapterName != null">
+                #{chapterName,jdbcType=VARCHAR},
+            </if>
+            <if test="url != null">
+                #{url,jdbcType=VARCHAR},
+            </if>
+            <if test="displayOrder != null">
+                #{displayOrder,jdbcType=INTEGER},
+            </if>
+            <if test="flagDelete != null">
+                #{flagDelete,jdbcType=TINYINT},
+            </if>
+            <if test="createTime != null">
+                #{createTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="creator != null">
+                #{creator,jdbcType=VARCHAR},
+            </if>
+            <if test="creatorIp != null">
+                #{creatorIp,jdbcType=VARCHAR},
+            </if>
+            <if test="modifyTime != null">
+                #{modifyTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="modifier != null">
+                #{modifier,jdbcType=VARCHAR},
+            </if>
+            <if test="modifierIp != null">
+                #{modifierIp,jdbcType=VARCHAR},
+            </if>
+            <if test="content != null">
+                #{content,jdbcType=LONGVARCHAR},
+            </if>
+        </trim>
+    </insert>
+    <update id="updateByPrimaryKeySelective" parameterType="com.xin.daily.entity.novel.NovelChapter">
+        <!--@mbg.generated-->
+        update study.novel_chapter
+        <set>
+            <if test="novelCode != null">
+                novel_code = #{novelCode,jdbcType=VARCHAR},
+            </if>
+            <if test="chapterCode != null">
+                chapter_Code = #{chapterCode,jdbcType=VARCHAR},
+            </if>
+            <if test="chapterName != null">
+                chapter_name = #{chapterName,jdbcType=VARCHAR},
+            </if>
+            <if test="url != null">
+                url = #{url,jdbcType=VARCHAR},
+            </if>
+            <if test="displayOrder != null">
+                display_order = #{displayOrder,jdbcType=INTEGER},
+            </if>
+            <if test="flagDelete != null">
+                flag_delete = #{flagDelete,jdbcType=TINYINT},
+            </if>
+            <if test="createTime != null">
+                create_time = #{createTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="creator != null">
+                creator = #{creator,jdbcType=VARCHAR},
+            </if>
+            <if test="creatorIp != null">
+                creator_ip = #{creatorIp,jdbcType=VARCHAR},
+            </if>
+            <if test="modifyTime != null">
+                modify_time = #{modifyTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="modifier != null">
+                modifier = #{modifier,jdbcType=VARCHAR},
+            </if>
+            <if test="modifierIp != null">
+                modifier_ip = #{modifierIp,jdbcType=VARCHAR},
+            </if>
+            <if test="content != null">
+                content = #{content,jdbcType=LONGVARCHAR},
+            </if>
+        </set>
+        where id = #{id,jdbcType=INTEGER}
+    </update>
+    <update id="updateContentByChapterCode">
+        update study.novel_chapter
+        set content = #{content,jdbcType=LONGVARCHAR}
+        where chapter_code = #{chapterCode,jdbcType=VARCHAR}
+    </update>
+    <update id="updateByPrimaryKey" parameterType="com.xin.daily.entity.novel.NovelChapter">
+        <!--@mbg.generated-->
+        update study.novel_chapter
+        set novel_code = #{novelCode,jdbcType=VARCHAR},
+        chapter_code = #{chapterCode,jdbcType=VARCHAR},
+        chapter_name = #{chapterName,jdbcType=VARCHAR},
+        url = #{url,jdbcType=VARCHAR},
+        display_order = #{displayOrder,jdbcType=INTEGER},
+        flag_delete = #{flagDelete,jdbcType=TINYINT},
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+        creator = #{creator,jdbcType=VARCHAR},
+        creator_ip = #{creatorIp,jdbcType=VARCHAR},
+        modify_time = #{modifyTime,jdbcType=TIMESTAMP},
+        modifier = #{modifier,jdbcType=VARCHAR},
+        modifier_ip = #{modifierIp,jdbcType=VARCHAR}
+        where id = #{id,jdbcType=INTEGER}
+    </update>
+    <insert id="batchInsert" parameterType="java.util.List" useGeneratedKeys="false">
+        insert into study.novel_chapter (novel_code, chapter_code, chapter_name, url,
+        display_order, flag_delete, create_time,
+        creator, creator_ip, modify_time,
+        modifier, modifier_ip, content
+        )
+        values
+        <foreach collection="list" item="item" separator=",">
+            (#{item.novelCode,jdbcType=VARCHAR},#{item.chapterCode,jdbcType=VARCHAR},
+            #{item.chapterName,jdbcType=VARCHAR}, #{item.url,jdbcType=VARCHAR}, #{item.displayOrder,jdbcType=INTEGER},
+            #{item.flagDelete,jdbcType=TINYINT}, #{item.createTime,jdbcType=TIMESTAMP},
+            #{item.creator,jdbcType=VARCHAR}, #{item.creatorIp,jdbcType=VARCHAR}, #{item.modifyTime,jdbcType=TIMESTAMP},
+            #{item.modifier,jdbcType=VARCHAR}, #{item.modifierIp,jdbcType=VARCHAR}, #{item.content,jdbcType=LONGVARCHAR}
+            )
+        </foreach>
+    </insert>
+    <select id="selectListForEmptyByNovelCode" resultType="com.xin.daily.vo.NovelChapterVo">
+        select
+        novel_code,
+        chapter_code,
+        chapter_name,
+        url,
+        display_order
+        from study.novel_chapter
+        where
+        novel_code = #{novelCode}
+        and content = ''
+    </select>
+    <select id="selectMaxByNovelCode" resultType="com.xin.daily.vo.NovelChapterVo">
+        select
+        nc.novel_code
+        ,nc.chapter_code
+        ,nc.chapter_name
+        ,nc.url
+        ,nc.display_order
+        ,n.url as novelUrl
+        from study.novel_chapter nc
+        left join study.novel n on n.novel_code = nc.novel_code
+        where
+        nc.novel_code = #{novelCode}
+        order by nc.display_order desc
+        limit 1
+    </select>
+    <select id="selectPageByNovelCode" resultType="com.xin.daily.vo.NovelChapterVo">
+        select
+        nc.novel_code
+        ,nc.chapter_code
+        ,nc.chapter_name
+        ,nc.url
+        ,nc.display_order
+        from study.novel_chapter nc
+        where
+        nc.novel_code = #{novelCode}
+        <if test="keyword != null and keyword != ''">
+            and nc.chapter_name like #{keyword}
+        </if>
+        order by nc.display_order
+        <if test="orderTypeStr != null">${orderTypeStr}</if>
+    </select>
+</mapper>

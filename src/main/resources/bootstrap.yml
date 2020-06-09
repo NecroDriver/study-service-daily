@@ -1,0 +1,8 @@
+spring:
+  cloud:
+    nacos:
+      config:
+        server-addr: 39.101.219.28:8848
+        file-extension: yaml
+  application:
+    name: study-service-daily

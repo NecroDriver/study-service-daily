@@ -6,15 +6,15 @@ spring:
   #数据库相关配置
   datasource:
     druid:
-      url: jdbc:mysql://192.168.0.102:3306/study?characterEncoding=UTF-8&serverTimezone=Asia/Shanghai
-      username: mafh
+      url: jdbc:mysql://39.101.219.28:3306/study?characterEncoding=UTF-8&serverTimezone=Asia/Shanghai
+      username: dba
       password: password
       initial-size: 8
       min-idle: 6
       max-active: 16
   # redis相关配置
   redis:
-    host: 192.168.0.102
+    host: 39.101.219.28
     password: redis
     port: 6379
   # 邮箱配置
@@ -24,6 +24,10 @@ spring:
     password: 12241233NIDF
   main:
     allow-bean-definition-overriding: true
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 39.101.219.28:8848
 #mybatis
 mybatis:
   # mybatis的数据库映射地址

@@ -13,11 +13,11 @@ import org.springframework.web.bind.annotation.RestController;
  * @version 1.0.0
  **/
 @RestController
-@RequestMapping("/study/config")
+@RequestMapping("/public/study/config")
 @RefreshScope
 public class ConfigController {
 
-    @Value("${customNum:0}")
+    @Value("${service.customNum:1}")
     private int customNum;
 
     @GetMapping("/get")

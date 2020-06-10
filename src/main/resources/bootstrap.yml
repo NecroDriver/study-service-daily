@@ -3,6 +3,8 @@ spring:
     nacos:
       config:
         server-addr: 39.101.219.28:8848
-        file-extension: yaml
+        file-extension: properties
+        group: study
+        namespace: d1aa5eff-930b-4ef8-a909-2305671e6fb1
   application:
     name: study-service-daily

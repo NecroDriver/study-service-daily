@@ -28,6 +28,7 @@ spring:
     nacos:
       discovery:
         server-addr: 39.101.219.28:8848
+        namespace: d1aa5eff-930b-4ef8-a909-2305671e6fb1
 #mybatis
 mybatis:
   # mybatis的数据库映射地址

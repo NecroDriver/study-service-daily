@@ -80,7 +80,6 @@
             </exclusions>
         </dependency>
 
-
         <!--    本地仓库    -->
         <dependency>
             <groupId>com.xin</groupId>

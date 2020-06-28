@@ -122,6 +122,8 @@
         <Logger name="druid.sql.Statement" level="warn"/>
         <!-- mybatis日志 -->
         <Logger name="com.mybatis" level="warn"/>
+        <!-- nacos日志 -->
+        <Logger name="com.alibaba.nacos" level="info"/>
         <!--根日志设置-->
         <root level="${output_log_level}">
             <appender-ref ref="RollingFile"/>

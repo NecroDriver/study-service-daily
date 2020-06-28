@@ -1,7 +1,7 @@
 package com.xin.daily.controller.config;
 
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.cloud.context.config.annotation.RefreshScope;
+import com.xin.daily.common.config.ServiceConfig;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -14,14 +14,13 @@ import org.springframework.web.bind.annotation.RestController;
  **/
 @RestController
 @RequestMapping("/public/study/config")
-@RefreshScope
 public class ConfigController {
 
-    @Value("${service.customNum:1}")
-    private int customNum;
+    @Autowired
+    private ServiceConfig serviceConfig;
 
     @GetMapping("/get")
-    public int get(){
-        return customNum;
+    public int get() {
+        return serviceConfig.getCustomNum();
     }
 }

@@ -11,9 +11,8 @@ import java.util.Optional;
 public class OptionalTest {
 
     public static void main(String[] args) {
-        String s = null;
-        String str = Optional.ofNullable(s).orElseGet(OptionalTest::create);
-        System.out.println(str);
+        String s = "a";
+        Optional<Object> str = Optional.ofNullable(s).map(a -> create());
     }
 
     public static String create(){

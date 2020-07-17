@@ -10,9 +10,7 @@ import org.springframework.util.Assert;
 public class DailyTest {
 
     public static void main(String[] args) {
-        String str = null;
-        String sss = str.toString();
-        Assert.notNull(sss, "sssssss");
-        System.out.println(sss);
+        long a = 4880L;
+        System.out.println((double) a /100);
     }
 }

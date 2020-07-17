@@ -1,9 +1,9 @@
 package com.xin.daily;
 
-import com.xin.swagger.configuration.EnableStudySwagger2;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
+import springfox.documentation.oas.annotations.EnableOpenApi;
 
 /**
  * 日常服务应用
@@ -11,7 +11,7 @@ import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
  * @author lemon
  */
 @SpringBootApplication(scanBasePackages = "com.xin")
-@EnableStudySwagger2
+@EnableOpenApi
 @EnableDiscoveryClient
 public class StudyServiceDailyApplication {
 

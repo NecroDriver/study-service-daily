@@ -1,12 +1,12 @@
 package com.xin.daily.common.mvc;
 
+import com.xin.common.vo.UserVo;
 import com.xin.redis.util.RedisUtils;
 import com.xin.web.consts.CookieConst;
 import com.xin.web.consts.RedisConst;
 import com.xin.web.pojo.Context;
 import com.xin.web.utils.convert.JsonUtils;
 import com.xin.web.utils.cookie.CookieUtils;
-import com.xin.web.vo.UserVo;
 import org.springframework.core.MethodParameter;
 import org.springframework.stereotype.Component;
 import org.springframework.util.ObjectUtils;

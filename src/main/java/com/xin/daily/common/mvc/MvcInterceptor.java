@@ -1,5 +1,6 @@
 package com.xin.daily.common.mvc;
 
+import com.xin.common.vo.ResultVo;
 import com.xin.redis.util.RedisUtils;
 import com.xin.web.consts.CookieConst;
 import com.xin.web.consts.RedisConst;
@@ -9,7 +10,6 @@ import com.xin.web.utils.convert.JsonUtils;
 import com.xin.web.utils.cookie.CookieUtils;
 import com.xin.web.utils.filter.FilterUtils;
 import com.xin.web.utils.filter.IUrlFilter;
-import com.xin.web.vo.ResultVo;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.context.ApplicationContext;

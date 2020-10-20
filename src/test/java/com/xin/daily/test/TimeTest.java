@@ -1,5 +1,8 @@
 package com.xin.daily.test;
 
+import javax.mail.search.NotTerm;
+import java.time.LocalDateTime;
+
 /**
  * @author creator mafh 2019/11/25 11:30
  * @author updater
@@ -8,9 +11,9 @@ package com.xin.daily.test;
 public class TimeTest {
 
     public static void main(String[] args) {
-        long time = 1480166465631L;
-        System.out.println(-1 << 5);
-        System.out.println(~5);
-        System.out.println(~(-1 << 5));
+        LocalDateTime nowTime = LocalDateTime.now();
+
+        System.out.println(nowTime);
+        System.out.println(nowTime.getHour());
     }
 }

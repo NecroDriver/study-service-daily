@@ -1,6 +1,7 @@
 package com.xin.daily.test;
 
-import org.springframework.util.Assert;
+import java.math.BigDecimal;
+import java.math.RoundingMode;
 
 /**
  * @author creator mafh 2019/11/27 14:16
@@ -9,8 +10,9 @@ import org.springframework.util.Assert;
  */
 public class DailyTest {
 
-    public static void main(String[] args) {
-        long a = 4880L;
-        System.out.println((double) a /100);
+    public static void main(String[] args) throws InterruptedException {
+
+        BigDecimal commission = BigDecimal.ONE.multiply(BigDecimal.valueOf(20)).divide(BigDecimal.valueOf(100), 2, RoundingMode.HALF_UP);
+        System.out.println(commission);
     }
 }

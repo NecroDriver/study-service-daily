@@ -5,7 +5,7 @@ import com.xin.daily.service.novel.INovelSpiderService;
 import com.xin.daily.vo.NovelChapterVo;
 import com.xin.web.base.BaseController;
 import com.xin.web.pojo.Context;
-import com.xin.web.vo.ResultVo;
+import com.xin.common.vo.ResultVo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;

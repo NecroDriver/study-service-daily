@@ -1,7 +1,7 @@
 package com.xin.daily.service.user;
 
 import com.xin.web.pojo.Context;
-import com.xin.web.vo.UserVo;
+import com.xin.common.vo.UserVo;
 
 /**
  * 用户登录service

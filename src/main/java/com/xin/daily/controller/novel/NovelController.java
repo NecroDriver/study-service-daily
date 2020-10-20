@@ -7,7 +7,7 @@ import com.xin.daily.vo.NovelVo;
 import com.xin.web.base.BaseController;
 import com.xin.web.pojo.Context;
 import com.xin.web.pojo.Pageable;
-import com.xin.web.vo.ResultVo;
+import com.xin.common.vo.ResultVo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;

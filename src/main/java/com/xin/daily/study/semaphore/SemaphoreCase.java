@@ -12,7 +12,7 @@ public class SemaphoreCase {
     /**
      * 信号量 允许运行线程数：3
      */
-    private static Semaphore semaphore = new Semaphore(3);
+    private static final Semaphore semaphore = new Semaphore(3);
     public static void main(String[] args) {
         // 10个学生去食堂打饭，只有三个窗口
         for (int i = 0; i < 10; i++) {
